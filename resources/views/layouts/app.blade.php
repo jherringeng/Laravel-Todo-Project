@@ -61,6 +61,7 @@
     </nav>
 
   <div class="container">
+    <div class = "white-margin"></div>
 
     @yield('content')
 
