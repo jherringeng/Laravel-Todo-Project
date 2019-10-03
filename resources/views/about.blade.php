@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('title')
+
+  About Jon's Todo App
+
+@endsection
+
 @section('content')
 
       <h1>Page about Jon's Todo App</h1>

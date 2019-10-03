@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('title')
+
+  View Todos
+
+@endsection
+
 @section('content')
 
     <h1 class = "text-center">View Todos</h1>

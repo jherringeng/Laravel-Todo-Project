@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@section('title')
+
+  View Todo
+
+@endsection
+
 @section('content')
 
     <h1 class = "text-center">View Todo</h1>
 
     <ul class="list-group">
-
-
 
         <li class="list-group-item">
 
