@@ -49,47 +49,20 @@
       <a class="navbar-brand" href="index.php">Jon's Todo App</a>
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link" href="#header">View Todos</a>
+          <a class="nav-link" href='/todos'>View Todos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#courses">New Todo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#odd">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#edu">Help</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#employ">Contact</a>
+          <a class="nav-link" href='/about'>About</a>
         </li>
       </ul>
     </nav>
 
   <div class="container">
-    <div class = "white-margin"></div>
-    <h1 class = "text-center">View Todos</h1>
 
-    <ul class="list-group">
-
-      @foreach($todos as $todo)
-
-        <li class="list-group-item">
-
-          {{ $todo->name }}
-
-          <button type="button" data-toggle="collapse" data-target="#see-todo-desc-{{ $todo->id }}" class="btn btn-primary sm float-right seeMore">Details</button>
-          <a href="/todos/{{  $todo->id  }}" class="btn btn-primary sm float-right">View</a>
-
-          <ul class="list-group">
-              <li class="list-group-item collapse" id = "see-todo-desc-{{ $todo->id }}">{{ $todo->description }}</li>
-          </ul>
-
-        </li>
-
-      @endforeach
-
-    </ul>
+    @yield('content')
 
   </div>
 
