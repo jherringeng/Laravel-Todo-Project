@@ -56,7 +56,7 @@
           <a class="nav-link" href='/todos'>View Todos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#courses">New Todo</a>
+          <a class="nav-link" href="/new-todos">New Todo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href='/about'>About</a>
