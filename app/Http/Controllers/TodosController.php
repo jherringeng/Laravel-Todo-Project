@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Todo;
 
+use DB;
+
 use Illuminate\Http\Request;
 
 class TodosController extends Controller
@@ -40,7 +42,7 @@ class TodosController extends Controller
 
     }
 
-    public function store_edit(){
+    public function store_edit($todoId){
 
       $this->validate(request(), [
 
@@ -51,12 +53,21 @@ class TodosController extends Controller
 
       $data = request()->all();
 
-      $todo->name = $data['name'];
-      $todo->description = $data['description'];
-      $todo->priority = $data['priority'];
-      $todo->completed = false;
+      DB::table('todos')
+            ->where('id', $todoId)
+            ->update(['name' => $data['name']]);
 
-      $todo->save();
+      DB::table('todos')
+            ->where('id', $todoId)
+            ->update(['description' => $data['description']]);
+
+      DB::table('todos')
+            ->where('id', $todoId)
+            ->update(['priority' => $data['priority']]);
+
+      DB::table('todos')
+            ->where('id', $todoId)
+            ->update(['completed' => false]);
 
       return redirect('/todos');
 

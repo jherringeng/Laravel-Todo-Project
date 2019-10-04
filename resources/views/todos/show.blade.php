@@ -44,6 +44,6 @@
 
     </ul>
 
-    <button 
+    <a href="/edit-todos/{{  $todo->id  }}" class="btn btn-primary sm float-right">Edit</a>
 
 @endsection

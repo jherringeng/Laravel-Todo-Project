@@ -8,7 +8,7 @@
 
 @section('content')
 
-  <h1 class = "text-center">New Todo</h1>
+  <h1 class = "text-center">Edit Todo</h1>
 
   @if($errors->any())
 
@@ -32,7 +32,7 @@
 
   @endif
 
-  <form action="/store-todos" method="POST">
+  <form action="/store-edited-todos/{{ $todo->id }}"> // method="POST">
 
     @csrf
 
