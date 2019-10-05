@@ -2,7 +2,7 @@
 
 @section('title')
 
-  New Todo
+  Edit Todo
 
 @endsection
 
@@ -32,7 +32,7 @@
 
   @endif
 
-  <form action="/store-edited-todos/{{ $todo->id }}"> // method="POST">
+  <form action="/store-edited-todos/{{ $todo->id }}">
 
     @csrf
 
@@ -46,19 +46,19 @@
         <textarea class="form-control" rows="3" name="description">{{ $todo->description }}</textarea>
       </p>
 
-      <p>Priority
-        <input type="text" class="form-control" value="{{ $todo->priority }}" name="priority"></input>
-      </p>
+      @include('components.priority-buttons')
 
     </div>
 
     <div class="form-group">
 
-      <button type="submit" class="btn btn-success float-right">Edit</button>
-      <a href="/todos" class="btn btn-danger float-right">Cancel</a>
+      <button type="submit" class="btn btn-success col-sm-1 float-right">Edit</button>
+      <a href="/todos" class="btn btn-danger col-sm-1 float-right">Cancel</a>
 
     </div>
 
   </form>
+
+  @include('components.priority-buttons-js')
 
 @endsection

@@ -37,12 +37,8 @@
 
     .btn-prod { background-color: #9DC3E7; border-color: #9DC3E7; color: black; }
 
-    :target {
-      display: block;
-      position: relative;
-      top: -50px;
-      visibility: hidden;
-    }
+    .opacity-50 {
+      opacity: 0.5; }
 
   </style>
 
