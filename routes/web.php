@@ -29,4 +29,4 @@ Route::get('store-edited-todos/{todo}', 'TodosController@store_edit');
 
 Route::post('store-todos', 'TodosController@store');
 
-Route::post('store-todos', 'TodosController@store');
+Route::get('delete-todos/{todo}', 'TodosController@delete');

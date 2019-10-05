@@ -18,6 +18,7 @@
 
           {{ $todo->name }}
 
+          <a href="/delete-todos/{{  $todo->id  }}" class="btn btn-primary sm float-right">Delete</a>
           <button type="button" data-toggle="collapse" data-target="#see-todo-desc-{{ $todo->id }}" class="btn btn-primary sm float-right seeMore">Details</button>
           <a href="/todos/{{  $todo->id  }}" class="btn btn-primary sm float-right">View</a>
           <a href="/edit-todos/{{  $todo->id  }}" class="btn btn-primary sm float-right">Edit</a>
