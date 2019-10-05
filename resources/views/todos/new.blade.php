@@ -69,7 +69,6 @@
 
   <script>
 
-
     $("#high-pri-btn").click(function(){
 
         $(this).removeClass("opacity-50");
@@ -103,9 +102,7 @@
 
     });
 
-
   </script>
-
 
 
 @endsection

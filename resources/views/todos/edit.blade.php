@@ -48,6 +48,13 @@
 
       @include('components.priority-buttons')
 
+      <p>Status =
+        <input id = "status-input" name="status" type="hidden" value="secret">
+        <label id = "status-display">Incomplete</label>
+        <button type="button" id = "status-complete-btn" class="pri-btn btn btn-primary col-sm-3 float-right opacity-50">Completed</button>
+        <button type="button" id = "status-incomplete-btn" class="pri-btn btn btn-warning col-sm-3 float-right">Not Completed</button>
+      </p>
+
     </div>
 
     <div class="form-group">
@@ -60,5 +67,31 @@
   </form>
 
   @include('components.priority-buttons-js')
+
+  <script>
+
+    
+
+    $("#status-complete-btn").click(function(){
+
+        $(this).removeClass("opacity-50");
+        $("#status-incomplete-btn").addClass("opacity-50");
+
+        $('#status-input').val('1');
+        $("#status-display").text("Completed");
+
+    });
+
+    $("#status-incomplete-btn").click(function(){
+
+        $(this).removeClass("opacity-50");
+        $("#status-complete-btn").addClass("opacity-50");
+
+        $('#status-input').val('0');
+        $("#status-display").text("Incomplete");
+
+    });
+
+  </script>
 
 @endsection

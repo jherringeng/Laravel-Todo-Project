@@ -38,12 +38,14 @@
 
         <li class="list-group-item">
 
-          Created: {{ $todo->created_at }}      Updated: {{ $todo->updated_at }}
+          <div class = "col-sm-6 float-left">Created:   {{ $todo->created_at }} </div>
+          <div class = "col-sm-6 float-left">Updated:   {{ $todo->updated_at }} </div>
 
         </li>
 
     </ul>
 
-    <a href="/edit-todos/{{  $todo->id  }}" class="btn btn-primary sm float-right">Edit</a>
+    <a href="/edit-todos/{{  $todo->id  }}" class="btn btn-primary col-sm-1 float-right">Edit</a>
+    <a href="/todos" class="btn btn-danger col-sm-1 float-right">Back</a>
 
 @endsection
