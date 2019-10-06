@@ -49,9 +49,9 @@
       @include('components.priority-buttons')
 
       <p>Status =
-        <input id = "status-input" name="status" type="hidden" value="secret">
+        <input id = "status-input" name="completed" type="hidden" value="{{ $todo->completed }}">
         <label id = "status-display">Incomplete</label>
-        <button type="button" id = "status-complete-btn" class="pri-btn btn btn-primary col-sm-3 float-right opacity-50">Completed</button>
+        <button type="button" id = "status-complete-btn" class="pri-btn btn btn-primary col-sm-3 float-right">Completed</button>
         <button type="button" id = "status-incomplete-btn" class="pri-btn btn btn-warning col-sm-3 float-right">Not Completed</button>
       </p>
 
@@ -70,7 +70,31 @@
 
   <script>
 
-    
+  $(document).ready(function() {
+        var completedStatus = "{{ $todo->completed }}";
+        if(completedStatus == 0){
+            $("#status-display").text("Incomplete");
+            $("#status-complete-btn").addClass("opacity-50");
+        } else {
+            $("#status-display").text("Completed");
+            $("#status-incomplete-btn").addClass("opacity-50");
+        }
+      });
+
+  var completedStatus = "{{ $todo->completed }}";
+
+  console.log("Completed " + completedStatus);
+
+    $(document).ready(function() {
+          var completedStatus = "{{ $todo->completed }}";
+          if(completedStatus == 0){
+              $("#status-display").text("Incomplete");
+              $("#status-complete-btn").addClass("opacity-50");
+          } else {
+              $("#status-display").text("Completed");
+              $("#status-incomplete-btn").addClass("opacity-50");
+          }
+        });
 
     $("#status-complete-btn").click(function(){
 

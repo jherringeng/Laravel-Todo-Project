@@ -91,7 +91,7 @@ class TodosController extends Controller
 
       DB::table('todos')
             ->where('id', $todoId)
-            ->update(['completed' => false]);
+            ->update(['completed' => $data['completed']]);
 
       return redirect('/todos');
 
