@@ -19,6 +19,10 @@ Route::get('about', 'AboutController@index');
 
 Route::get('todos', 'TodosController@index');
 
+Route::get('/todos/incomplete', 'TodosController@index_incomplete');
+
+Route::get('/todos/complete', 'TodosController@index_complete');
+
 Route::get('todos/{todo}', 'TodosController@show');
 
 Route::get('new-todos', 'TodosController@create');

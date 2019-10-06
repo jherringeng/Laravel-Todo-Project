@@ -20,6 +20,18 @@ class TodosController extends Controller
 
     }
 
+    public function index_incomplete(){
+
+      return view('todos.index')->with('todos', Todo::all()->where('completed','0'));
+
+    }
+
+    public function index_complete(){
+
+      return view('todos.index')->with('todos', Todo::all()->where('completed','1'));
+
+    }
+
     public function show($todoId){
 
       // $todo = Todo::find($todoId);

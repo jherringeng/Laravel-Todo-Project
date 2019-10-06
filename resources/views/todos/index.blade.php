@@ -12,6 +12,7 @@
 
     <div class="col-sm-12">
       <a class="btn btn-primary" href="/new-todos">New Todo</a>
+      <a id ="view-status" class="btn btn-primary" href="/todos/incomplete">View Incomplete</a>
     </div>
 
     <div>
