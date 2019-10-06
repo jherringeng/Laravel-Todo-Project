@@ -70,21 +70,41 @@
 
   <script>
 
+  // Function to set priority buttons and flags on document ready
   $(document).ready(function() {
-        var completedStatus = "{{ $todo->completed }}";
-        if(completedStatus == 0){
-            $("#status-display").text("Incomplete");
-            $("#status-complete-btn").addClass("opacity-50");
-        } else {
-            $("#status-display").text("Completed");
-            $("#status-incomplete-btn").addClass("opacity-50");
+
+      $('#priority-input').val("{{ $todo->priority }}");
+      $("#priority-display").text("{{ $todo->priority }}");
+
+        var priorityStatus = "{{ $todo->priority }}";
+
+        if(priorityStatus == "Low"){
+
+            $("#med-pri-btn").addClass("opacity-50");
+            $("#high-pri-btn").addClass("opacity-50");
+
+        } else if (priorityStatus == "Medium"){
+
+            $("#low-pri-btn").addClass("opacity-50");
+            $("#high-pri-btn").addClass("opacity-50");
+
+        } else if (priorityStatus == "High"){
+
+            $("#low-pri-btn").addClass("opacity-50");
+            $("#med-pri-btn").addClass("opacity-50");
+
+        }
+
+        else {
+
+            $("#low-pri-btn").addClass("opacity-50");
+            $("#med-pri-btn").addClass("opacity-50");
+            $("#high-pri-btn").addClass("opacity-50");
+
         }
       });
 
-  var completedStatus = "{{ $todo->completed }}";
-
-  console.log("Completed " + completedStatus);
-
+    // Function to set completed buttons and flags on document ready
     $(document).ready(function() {
           var completedStatus = "{{ $todo->completed }}";
           if(completedStatus == 0){
@@ -96,6 +116,7 @@
           }
         });
 
+    // Functions to set and interact with Completed buttons
     $("#status-complete-btn").click(function(){
 
         $(this).removeClass("opacity-50");
