@@ -26,7 +26,12 @@
 
         <li class="list-group-item">
 
-          Priority: {{ $todo->priority }}
+          <div class = "col-sm-2 float-left" > Priority: {{ $todo->priority }} </div>
+          <div class = "col-sm-4 float-left btn btn-primary" > Priority: {{ $todo->priority }}</div>
+          <div class = "col-sm-2 float-left" > Status:
+            <label id = "status-display">Incomplete</label>
+          </div>
+          <div id = "complete-status" class = "col-sm-4 float-left btn" ></div>
 
         </li>
 
@@ -47,5 +52,36 @@
 
     <a href="/edit-todos/{{  $todo->id  }}" class="btn btn-primary col-sm-1 float-right">Edit</a>
     <a href="/todos" class="btn btn-danger col-sm-1 float-right">Back</a>
+
+
+    <script>
+
+    $(document).ready(function() {
+          var completedStatus = "{{ $todo->priority }}";
+          if(completedStatus == 0){
+              $("#status-display").text("Incomplete");
+              $("#complete-status").addClass("btn-warning");
+              $("#complete-status").text("Incomplete")
+          } else if {
+              $("#status-display").text("Completed");
+              $("#complete-status").addClass("btn-primary");
+              $("#complete-status").text("Completed")
+          }
+        });
+
+      $(document).ready(function() {
+            var completedStatus = "{{ $todo->completed }}";
+            if(completedStatus == 0){
+                $("#status-display").text("Incomplete");
+                $("#complete-status").addClass("btn-warning");
+                $("#complete-status").text("Incomplete")
+            } else {
+                $("#status-display").text("Completed");
+                $("#complete-status").addClass("btn-primary");
+                $("#complete-status").text("Completed")
+            }
+          });
+
+    </script>
 
 @endsection
