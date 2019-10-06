@@ -59,7 +59,7 @@
 
     <div class="form-group">
 
-      <button type="submit" class="btn btn-success col-sm-1 float-right">Edit</button>
+      <button type="submit" class="btn btn-success col-sm-1 float-right">Update</button>
       <a href="/todos" class="btn btn-danger col-sm-1 float-right">Cancel</a>
 
     </div>

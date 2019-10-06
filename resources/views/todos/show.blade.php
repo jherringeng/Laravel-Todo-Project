@@ -27,17 +27,11 @@
         <li class="list-group-item">
 
           <div class = "col-sm-2 float-left" > Priority: {{ $todo->priority }} </div>
-          <div class = "col-sm-4 float-left btn btn-primary" > Priority: {{ $todo->priority }}</div>
+          <div id = "priority-status" class = "col-sm-4 float-left btn btn-primary" >{{ $todo->priority }}</div>
           <div class = "col-sm-2 float-left" > Status:
             <label id = "status-display">Incomplete</label>
           </div>
           <div id = "complete-status" class = "col-sm-4 float-left btn" ></div>
-
-        </li>
-
-        <li class="list-group-item">
-
-          Completed: {{ $todo->completed }}
 
         </li>
 
@@ -50,22 +44,21 @@
 
     </ul>
 
-    <a href="/edit-todos/{{  $todo->id  }}" class="btn btn-primary col-sm-1 float-right">Edit</a>
-    <a href="/todos" class="btn btn-danger col-sm-1 float-right">Back</a>
+    <a href="/delete-todos/{{  $todo->id  }}" class="btn btn-danger col-sm-1 float-right">Delete</a>
+    <a href="/edit-todos/{{  $todo->id  }}" class="btn btn-warning col-sm-1 float-right">Edit</a>
+    <a href="/todos" class="btn btn-success col-sm-1 float-right">Back</a>
 
 
     <script>
 
     $(document).ready(function() {
-          var completedStatus = "{{ $todo->priority }}";
-          if(completedStatus == 0){
-              $("#status-display").text("Incomplete");
-              $("#complete-status").addClass("btn-warning");
-              $("#complete-status").text("Incomplete")
-          } else if {
-              $("#status-display").text("Completed");
-              $("#complete-status").addClass("btn-primary");
-              $("#complete-status").text("Completed")
+          var priorityStatus = "{{ $todo->priority }}";
+          if (priorityStatus == "Low") {
+              $("#priority-status").addClass("btn-primary");
+          } else if (priorityStatus == "Medium") {
+              $("#priority-status").addClass("btn-warning");
+          } else if (priorityStatus == "High") {
+              $("#priority-status").addClass("btn-danger");
           }
         });
 
