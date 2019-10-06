@@ -12,7 +12,19 @@
 
     <div class="col-sm-12">
       <a class="btn btn-primary" href="/new-todos">New Todo</a>
-      <a id ="view-status" class="btn btn-primary" href="/todos/incomplete">View Incomplete</a>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-danger">View</button>
+        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/todos">All</a>
+          <a class="dropdown-item" href="/todos/incomplete">Incomplete</a>
+          <a class="dropdown-item" href="/todos/complete">Complete</a>
+        </div>
+      </div>
+
     </div>
 
     <div>

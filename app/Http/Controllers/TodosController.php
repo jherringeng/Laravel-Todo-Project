@@ -91,19 +91,12 @@ class TodosController extends Controller
 
       DB::table('todos')
             ->where('id', $todoId)
-            ->update(['name' => $data['name']]);
-
-      DB::table('todos')
-            ->where('id', $todoId)
-            ->update(['description' => $data['description']]);
-
-      DB::table('todos')
-            ->where('id', $todoId)
-            ->update(['priority' => $data['priority']]);
-
-      DB::table('todos')
-            ->where('id', $todoId)
-            ->update(['completed' => $data['completed']]);
+            ->update(['name' => $data['name'],
+                      'description' => $data['description'],
+                      'priority' => $data['priority'],
+                      'completed' => $data['completed'],
+                      'updated_at' => date('Y-m-d H:i:s')
+                    ]);
 
       return redirect('/todos');
 
