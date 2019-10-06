@@ -37,8 +37,10 @@
 
         <li class="list-group-item">
 
-          <div class = "col-sm-6 float-left">Created:   {{ $todo->created_at }} </div>
-          <div class = "col-sm-6 float-left">Updated:   {{ $todo->updated_at }} </div>
+          <div class = "col-sm-2 float-left">Created:</div>
+          <div class = "col-sm-4 float-left">{{ $todo->created_at }}</div>
+          <div class = "col-sm-2 float-left">Updated:</div>
+          <div class = "col-sm-4 float-left">{{ $todo->updated_at }} </div>
 
         </li>
 
