@@ -1,0 +1,85 @@
+Starting new vagrant machine.
+
+1. Create db todos_app
+
+vagrant up --provision
+
+vagrant ssh
+mysql -u homestead -p
+Password = secret
+
+CREATE DATABASE todos_app;
+
+2. Load database
+
+Go to setup folder
+mysql -u homestead -p todos_app < todos_app.sql 
+
+OR 
+
+Seed db with 
+
+php artisan migrate
+php artisan db:seed
+
+
+
+
+
+vagrant up --provision
+
+vagrant destroy
+
+composer global require laravel/installer
+
+laravel new blog
+
+artisan serve
+
+php artisan make:controller AboutController
+
+php artisan make:controller TodosController
+
+php artisan make:model Todo
+
+mysql -u homestead -p
+
+show databases;
+
+use todos_app;
+
+show tables;
+
+describe todos;
+
++-------------+---------------------+------+-----+---------+----------------+
+| Field       | Type                | Null | Key | Default | Extra          |
++-------------+---------------------+------+-----+---------+----------------+
+| id          | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(255)        | NO   |     | NULL    |                |
+| description | text                | NO   |     | NULL    |                |
+| priority    | varchar(255)        | NO   |     | NULL    |                |
+| completed   | tinyint(1)          | NO   |     | NULL    |                |
+| created_at  | timestamp           | YES  |     | NULL    |                |
+| updated_at  | timestamp           | YES  |     | NULL    |                |
++-------------+---------------------+------+-----+---------+----------------+
+
+SELECT * FROM todos;
+
+php artisan make:migration create_todos_table
+
+php artisan migrate
+
+php artisan migrate:rollback
+
+php artisan migrate:refresh
+
+php artisan make:factory TodoFactory
+
+php artisan make:seed TodosSeeder
+
+php artisan db:seed
+
+Stop start server for new environment variables
+
+php artisan serve
