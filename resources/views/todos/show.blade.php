@@ -46,7 +46,9 @@
 
     </ul>
 
-    <a href="/delete-todos/{{  $todo->id  }}" class="btn btn-danger col-sm-1 float-right">Delete</a>
+    <button type="button" class="btn btn-danger col-sm-1 float-right" data-toggle="modal" data-target="#deleteModal" data-name="{{ $todo->name }}" data-link="/delete-todos/{{  $todo->id  }}">
+      Delete
+    </button>
     <a href="/edit-todos/{{  $todo->id  }}" class="btn btn-warning col-sm-1 float-right">Edit</a>
     <a href="/todos" class="btn btn-success col-sm-1 float-right">Back</a>
 
@@ -78,5 +80,7 @@
           });
 
     </script>
+
+    @include('components.delete-modal')
 
 @endsection

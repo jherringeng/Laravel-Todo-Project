@@ -60,13 +60,18 @@
     <div class="form-group">
 
       <button type="submit" class="btn btn-success col-sm-1 float-right">Update</button>
-      <a href="/todos" class="btn btn-danger col-sm-1 float-right">Cancel</a>
+      <button type="button" class="btn btn-danger col-sm-1 float-right" data-toggle="modal" data-target="#deleteModal" data-name="{{ $todo->name }}" data-link="/delete-todos/{{  $todo->id  }}">
+        Delete
+      </button>
+      <a href="/todos" class="btn btn-warning col-sm-1 float-right">Cancel</a>
 
     </div>
 
   </form>
 
   @include('components.priority-buttons-js')
+
+  @include('components.delete-modal')
 
   <script>
 
