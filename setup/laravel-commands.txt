@@ -1,6 +1,32 @@
 Starting new vagrant machine.
 
-1. Create db todos_app
+1. Install vagrant homestead VM
+
+vagrant box add laravel/homestead
+
+2. Pull laravel and yaml setup from
+
+https://github.com/jherringeng/Laravel-Homestead.git
+
+Create or change host folders in the homestead yaml file
+
+In homestead folder use command (for windows)
+
+init.bat
+
+3. Add to hosts file
+
+192.168.10.10  homestead.test
+
+
+
+Load files for Todos App
+
+1. Pull files from
+
+https://github.com/jherringeng/Laravel-Todo-Project.git
+
+2. Create db todos_app (in Homestead folder)
 
 vagrant up --provision
 
@@ -10,14 +36,14 @@ Password = secret
 
 CREATE DATABASE todos_app;
 
-2. Load database
+3. Load database
 
 Go to setup folder
-mysql -u homestead -p todos_app < todos_app.sql 
+mysql -u homestead -p todos_app < todos_app.sql
 
-OR 
+OR
 
-Seed db with 
+Seed db with
 
 php artisan migrate
 php artisan db:seed
@@ -25,16 +51,23 @@ php artisan db:seed
 
 
 
+Run and stop vagrant machine
 
 vagrant up --provision
 
-vagrant destroy
+vagrant halt
+
+Set up laravel
+
+Install and run Laravel
 
 composer global require laravel/installer
 
 laravel new blog
 
 artisan serve
+
+Create controllers
 
 php artisan make:controller AboutController
 
@@ -66,6 +99,8 @@ describe todos;
 
 SELECT * FROM todos;
 
+Set up databases & related commands
+
 php artisan make:migration create_todos_table
 
 php artisan migrate
@@ -73,6 +108,8 @@ php artisan migrate
 php artisan migrate:rollback
 
 php artisan migrate:refresh
+
+Make and use seeder commands
 
 php artisan make:factory TodoFactory
 
@@ -83,3 +120,7 @@ php artisan db:seed
 Stop start server for new environment variables
 
 php artisan serve
+
+Create MySql Backup
+
+mysqldump -A -u homestead -p todos_app > todos_app.sql
